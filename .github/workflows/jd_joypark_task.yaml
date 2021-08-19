@@ -10,7 +10,7 @@ on:
     types: jd_joypark_task
 
 jobs:
-  # timeout-minutes: 50
+  # timeout-minutes: 60
   build:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
@@ -36,7 +36,7 @@ jobs:
           sed -i 's/process.exit(0)/{}/g' ./src/jd_joypark_task.js
           sed -i 's/GITHUB/G1THU8/g' ./src/jdCookie.js
       - name: '运行 【汪汪乐园每日任务】'
-        # timeout-minutes: 50
+        timeout-minutes: 60
         run: |
           node ./src/jd_joypark_task.js
         env:

@@ -10,7 +10,7 @@ on:
     types: jd_jxmc
 
 jobs:
-  # timeout-minutes: 50
+  # timeout-minutes: 60
   build:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
@@ -36,7 +36,7 @@ jobs:
           sed -i 's/process.exit(0)/{}/g' ./src/jd_jxmc.js
           sed -i 's/GITHUB/G1THU8/g' ./src/jdCookie.js
       - name: '运行 【京喜牧场】'
-        # timeout-minutes: 50
+        timeout-minutes: 60
         run: |
           node ./src/jd_jxmc.js
         env:

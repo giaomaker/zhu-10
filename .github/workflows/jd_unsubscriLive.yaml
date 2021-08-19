@@ -10,7 +10,7 @@ on:
     types: jd_unsubscriLive
 
 jobs:
-  # timeout-minutes: 50
+  # timeout-minutes: 60
   build:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
@@ -36,7 +36,7 @@ jobs:
           sed -i 's/process.exit(0)/{}/g' ./src/jd_unsubscriLive.js
           sed -i 's/GITHUB/G1THU8/g' ./src/jdCookie.js
       - name: '运行 【取关所有主播】'
-        # timeout-minutes: 50
+        timeout-minutes: 60
         run: |
           node ./src/jd_unsubscriLive.js
         env:
