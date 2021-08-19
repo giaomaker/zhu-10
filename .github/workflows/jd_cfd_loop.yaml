@@ -3,14 +3,14 @@ name: jd_cfd_loop
 on:
   workflow_dispatch:
   schedule:
-    - cron: '15 18,2,10 * * *'
+    - cron: '31 0-18/6 * * *'
   watch:
     types: started
   repository_dispatch:
     types: jd_cfd_loop
 
 jobs:
-  # timeout-minutes: 50
+  # timeout-minutes: 60
   build:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
@@ -36,7 +36,7 @@ jobs:
           sed -i 's/process.exit(0)/{}/g' ./src/jd_cfd_loop.js
           sed -i 's/GITHUB/G1THU8/g' ./src/jdCookie.js
       - name: '运行 【京喜财富岛热气球挂机】'
-        timeout-minutes: 50
+        timeout-minutes: 60
         run: |
           node ./src/jd_cfd_loop.js
         env:
