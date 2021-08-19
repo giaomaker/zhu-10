@@ -10,7 +10,7 @@ on:
     types: jd_car
 
 jobs:
-  # timeout-minutes: 60
+  # timeout-minutes: 50
   build:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id

@@ -10,7 +10,7 @@ on:
     types: jd_market_lottery
 
 jobs:
-  # timeout-minutes: 60
+  # timeout-minutes: 50
   build:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
@@ -36,7 +36,7 @@ jobs:
           sed -i 's/process.exit(0)/{}/g' ./src/jd_market_lottery.js
           sed -i 's/GITHUB/G1THU8/g' ./src/jdCookie.js
       - name: '运行 【幸运大转盘】'
-        timeout-minutes: 60
+        timeout-minutes: 50
         run: |
           node ./src/jd_market_lottery.js
         env:
