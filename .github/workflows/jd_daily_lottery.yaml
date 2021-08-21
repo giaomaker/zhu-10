@@ -1,13 +1,13 @@
-name: jd_cash
+name: jd_daily_lottery
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '10 0-23/4 * * *'
+    - cron: '20 17,14,15 * * *'
   watch:
     types: started
   repository_dispatch:
-    types: jd_cash
+    types: jd_daily_lottery
 
 jobs:
   # timeout-minutes: 50
@@ -33,20 +33,18 @@ jobs:
           npm install
       - name: 替换
         run: |
-          sed -i 's/process.exit(0)/{}/g' ./src/jd_cash.js
+          sed -i 's/process.exit(0)/{}/g' ./src/jd_daily_lottery.js
           sed -i 's/GITHUB/G1THU8/g' ./src/jdCookie.js
-      - name: '运行 【签到领现金】'
+      - name: '运行 【小鸽有礼-每日抽奖】'
         timeout-minutes: 50
         run: |
-          node ./src/jd_cash.js
+          node ./src/jd_daily_lottery.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE || github.event.client_payload.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG || github.event.client_payload.JD_DEBUG }}
           JD_USER_AGENT: ${{ secrets.JD_USER_AGENT || github.event.client_payload.JD_USER_AGENT }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN || github.event.client_payload.TG_BOT_TOKEN }}
           TG_USER_ID: ${{ secrets.TG_USER_ID || github.event.client_payload.TG_USER_ID }}
-          JD_CASH_SHARECODES: ${{ secrets.JD_CASH_SHARECODES || github.event.client_payload.JD_CASH_SHARECODES }}
-          CASH_EXCHANGE: ${{ secrets.CASH_EXCHANGE || github.event.client_payload.CASH_EXCHANGE }}
 
       - name: Delete workflow runs
         uses: GitRML/delete-workflow-runs@main

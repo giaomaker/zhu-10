@@ -3,7 +3,7 @@ name: jd_speed_sign
 on:
   workflow_dispatch:
   schedule:
-    - cron: '5 22,11 * * *'
+    - cron: '21 17,22 * * *'
   watch:
     types: started
   repository_dispatch:

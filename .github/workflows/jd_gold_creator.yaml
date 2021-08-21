@@ -3,7 +3,7 @@ name: jd_gold_creator
 on:
   workflow_dispatch:
   schedule:
-    - cron: '6 17,14 * * *'
+    - cron: '0 17,14 * * *'
   watch:
     types: started
   repository_dispatch:

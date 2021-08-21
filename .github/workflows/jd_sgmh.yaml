@@ -3,7 +3,7 @@ name: jd_sgmh
 on:
   workflow_dispatch:
   schedule:
-    - cron: '15 23,15 * * *'
+    - cron: '47 0,14 * * *'
   watch:
     types: started
   repository_dispatch:

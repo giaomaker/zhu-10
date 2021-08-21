@@ -3,7 +3,7 @@ name: jd_rankingList
 on:
   workflow_dispatch:
   schedule:
-    - cron: '35 17 * * *'
+    - cron: '21 1 * * *'
   watch:
     types: started
   repository_dispatch:
