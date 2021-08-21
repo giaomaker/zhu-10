@@ -58,7 +58,7 @@ try {
     A = require('./tools/jd_jxmcToken');
 }
 catch (e) {
-    A = require('./jd_jxmcToken');
+    A = require('./tools/jd_jxmcToken');
 }
 var cookie = '', res = '', shareCodes = [], homePageInfo, activeid = '', jxToken, UserName, index;
 var HELP_HW = process.env.HELP_HW ? process.env.HELP_HW : "false";
