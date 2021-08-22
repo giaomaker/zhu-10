@@ -1,13 +1,13 @@
-name: jd_golden_machine
+name: jd_king
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '21 20,23 * * *'
+    - cron: '23 23,16 * * *'
   watch:
     types: started
   repository_dispatch:
-    types: jd_golden_machine
+    types: jd_king
 
 jobs:
   # timeout-minutes: 50
@@ -33,12 +33,12 @@ jobs:
           npm install
       - name: 替换
         run: |
-          sed -i 's/process.exit(0)/{}/g' ./src/jd_golden_machine.js
+          sed -i 's/process.exit(0)/{}/g' ./src/jd_king.js
           sed -i 's/GITHUB/G1THU8/g' ./src/jdCookie.js
-      - name: '运行 【金机奖投票】'
+      - name: '运行 【王者荣耀投票】'
         timeout-minutes: 50
         run: |
-          node ./src/jd_golden_machine.js
+          node ./src/jd_king.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE || github.event.client_payload.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG || github.event.client_payload.JD_DEBUG }}
