@@ -154,12 +154,12 @@ async function joyReward() {
         if (time >= 8 && time < 16) {
           giftSaleInfos = 'beanConfigs8';
           $.Num = 8
-          rewardNum = 500
+          rewardNum = 20
         }
         if (time >= 16 && time < 24) {
           giftSaleInfos = 'beanConfigs16';
           $.Num = 16
-          rewardNum = 20
+          rewardNum = 500
         }
         if ($.isNode() && process.env.JD_JOY_REWARD_NAME) {
           rewardNum = process.env.JD_JOY_REWARD_NAME * 1;
