@@ -1,3 +1,4 @@
+// @grant    require
 /*
 领券中心签到
 
