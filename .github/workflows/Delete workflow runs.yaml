@@ -12,7 +12,7 @@ on:
         required: true
         default: 0
   schedule:
-    - cron: '31 21 1,10,20 * *'
+    - cron: '31 21 1,8,16,24 * *'
   watch:
     types: started
   repository_dispatch:
