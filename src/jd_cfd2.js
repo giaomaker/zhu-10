@@ -60,11 +60,11 @@ $.appId = 10028;
   $.CryptoJS = $.isNode() ? require('crypto-js') : CryptoJS;
   await requestAlgo();
   await $.wait(1000)
-  let res = await getAuthorShareCode('https://raw.githubusercontent.com/Aaron-lv/updateTeam/master/shareCodes/cfd.json')
+  let res = await getAuthorShareCode('https://raw.githubusercontent.com/Aaron-lv/updateTeam/master/shareCodes/.cfd.json')
   if (!res) {
-    $.http.get({url: 'https://purge.jsdelivr.net/gh/Aaron-lv/updateTeam@master/shareCodes/cfd.json'}).then((resp) => {}).catch((e) => console.log('刷新CDN异常', e));
+    $.http.get({url: 'https://purge.jsdelivr.net/gh/Aaron-lv/updateTeam@master/shareCodes/.cfd.json'}).then((resp) => {}).catch((e) => console.log('刷新CDN异常', e));
     await $.wait(1000)
-    res = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/Aaron-lv/updateTeam@master/shareCodes/cfd.json')
+    res = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/Aaron-lv/updateTeam@master/shareCodes/.cfd.json')
   }
   $.strMyShareIds = [...(res && res.shareId || [])]
   for (let i = 0; i < cookiesArr.length; i++) {
@@ -495,7 +495,7 @@ async function mermaidOper(strStoryId, dwType, ddwTriggerDay) {
                 console.log(`昨日解救美人鱼领奖成功：获得${data.Data.Prize.strPrizeName}\n`)
               } else {
                 console.log(`昨日解救美人鱼领奖失败：${data.sErrMsg}\n`)
-              }             
+              }
               break
             default:
               break
@@ -842,7 +842,7 @@ async function getActTask(type = true) {
           if (type) {
             for (let key of Object.keys(data.Data.TaskList)) {
               let vo = data.Data.TaskList[key]
-              if (vo.dwOrderId === 1 && vo.dwCompleteNum !== vo.dwTargetNum) {
+              if ([1, 2].includes(vo.dwOrderId) && (vo.dwCompleteNum !== vo.dwTargetNum)) {
                 console.log(`开始【🐮牛牛任务】${vo.strTaskName}`)
                 for (let i = vo.dwCompleteNum; i < vo.dwTargetNum; i++) {
                   console.log(`【🐮牛牛任务】${vo.strTaskName} 进度：${i + 1}/${vo.dwTargetNum}`)
@@ -854,7 +854,7 @@ async function getActTask(type = true) {
             data = await getActTask(false)
             for (let key of Object.keys(data.Data.TaskList)) {
               let vo = data.Data.TaskList[key]
-              if (vo.dwCompleteNum >= vo.dwTargetNum && vo.dwAwardStatus !== 1) {
+              if ((vo.dwCompleteNum >= vo.dwTargetNum) && vo.dwAwardStatus !== 1) {
                 await awardActTask('Award', vo)
                 await $.wait(2000)
               }
