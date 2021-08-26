@@ -3,7 +3,7 @@ name: jd_ccSign
 on:
   workflow_dispatch:
   schedule:
-    - cron: '11 16 * * *'
+    - cron: '11 23 * * *'
   watch:
     types: started
   repository_dispatch:

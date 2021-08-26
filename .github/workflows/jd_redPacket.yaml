@@ -31,10 +31,10 @@ jobs:
       - name: npm install
         run: |
           npm install
-      # - name: 替换
-      #   run: |
-      #     sed -i 's/process.exit(0)/{}/g' ./src/jd_redPacket.js
-      #     sed -i 's/GITHUB/G1THU8/g' ./src/jdCookie.js
+      - name: 替换
+        run: |
+          sed -i 's/process.exit(0)/{}/g' ./src/jd_redPacket.js
+          sed -i 's/GITHUB/G1THU8/g' ./src/jdCookie.js
       - name: '运行 【全民开红包脚本】'
         timeout-minutes: 50
         run: |
