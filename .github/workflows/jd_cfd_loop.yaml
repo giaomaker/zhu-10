@@ -1,4 +1,4 @@
-name: jd_cfd_loop
+name: 京喜财富岛热气球挂机
 
 on:
   workflow_dispatch:
