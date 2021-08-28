@@ -1,4 +1,4 @@
-name: jd_moneyTree
+name: 京东摇钱树
 
 on:
   workflow_dispatch:
