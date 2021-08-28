@@ -1,4 +1,4 @@
-name: jd_plantBean
+name: 种豆得豆
 
 on:
   workflow_dispatch:
