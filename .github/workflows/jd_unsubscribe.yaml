@@ -1,4 +1,4 @@
-name: jd_unsubscribe
+name: 京东取关商品
 
 on:
   workflow_dispatch:
