@@ -1,4 +1,4 @@
-name: jd_car
+name: 京东汽车
 
 on:
   workflow_dispatch:
