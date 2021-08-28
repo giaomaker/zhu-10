@@ -1,4 +1,4 @@
-name: jx_sign
+name: 京喜签到
 
 on:
   workflow_dispatch:
