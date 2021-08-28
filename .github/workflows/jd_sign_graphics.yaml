@@ -1,4 +1,4 @@
-name: jd_sign_graphics
+name: 京东签到图形验证
 
 on:
   workflow_dispatch:
