@@ -1,4 +1,4 @@
-name: jd_club_lottery
+name: 摇京豆脚本
 
 on:
   workflow_dispatch:
