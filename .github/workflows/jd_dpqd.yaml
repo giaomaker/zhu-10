@@ -1,4 +1,4 @@
-name: jd_dpqd
+name: 店铺签到
 
 on:
   workflow_dispatch:
