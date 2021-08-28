@@ -1,4 +1,4 @@
-name: jd_shop
+name: 进店领豆脚本
 
 on:
   workflow_dispatch:
