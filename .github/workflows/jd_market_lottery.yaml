@@ -1,4 +1,4 @@
-name: jd_market_lottery
+name: 幸运大转盘
 
 on:
   workflow_dispatch:
