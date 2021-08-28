@@ -1,4 +1,4 @@
-name: jd_unsubscriLive
+name: 取关所有主播
 
 on:
   workflow_dispatch:
