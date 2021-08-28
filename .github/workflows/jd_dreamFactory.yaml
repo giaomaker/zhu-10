@@ -1,4 +1,4 @@
-name: jd_dreamFactory
+name: 京喜工厂
 
 on:
   workflow_dispatch:
