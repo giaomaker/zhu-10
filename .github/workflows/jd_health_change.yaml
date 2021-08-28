@@ -1,4 +1,4 @@
-name: jd_health_change
+name: 京东健康兑换
 
 on:
   workflow_dispatch:
