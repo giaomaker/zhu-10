@@ -1,4 +1,4 @@
-name: jd_bean_home
+name: 领京豆额外奖励&抢京豆
 
 on:
   workflow_dispatch:
