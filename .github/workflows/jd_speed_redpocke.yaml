@@ -1,4 +1,4 @@
-name: jd_speed_redpocke
+name: 京东极速版红包
 
 on:
   workflow_dispatch:
