@@ -1,4 +1,4 @@
-name: jd_foodRunning
+name: 零食街
 
 on:
   workflow_dispatch:
