@@ -1,4 +1,4 @@
-name: jd_superMarket
+name: 东东超市
 
 on:
   workflow_dispatch:
