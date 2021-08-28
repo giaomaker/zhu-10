@@ -1,4 +1,4 @@
-name: jd_speed
+name: 天天加速
 
 on:
   workflow_dispatch:
