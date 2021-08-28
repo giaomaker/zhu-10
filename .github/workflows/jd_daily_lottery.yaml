@@ -1,4 +1,4 @@
-name: jd_daily_lottery
+name: 小鸽有礼-每日抽奖
 
 on:
   workflow_dispatch:
