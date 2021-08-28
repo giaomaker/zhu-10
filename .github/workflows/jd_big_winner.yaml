@@ -1,4 +1,4 @@
-name: jd_big_winner
+name: 省钱大赢家之翻翻乐
 
 on:
   workflow_dispatch:
