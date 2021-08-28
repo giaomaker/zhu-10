@@ -1,4 +1,4 @@
-name: jd_yili_cow
+name: 云养牛
 
 on:
   workflow_dispatch:
