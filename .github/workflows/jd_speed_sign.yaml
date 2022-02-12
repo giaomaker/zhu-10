@@ -3,7 +3,7 @@ name: 京东极速版签到赚现金
 on:
   workflow_dispatch:
   schedule:
-    - cron: '3 0-23/1 * * *'
+    - cron: '21 13,20 * * *'
   watch:
     types: started
   repository_dispatch:
